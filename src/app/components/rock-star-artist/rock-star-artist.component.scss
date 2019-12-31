@@ -1,0 +1,91 @@
+.RockStarArtistComponent {
+  width: 100%;
+  margin-bottom: 25px;
+  display: block;
+
+  .image {
+    height: 100%;
+    width: 180px;
+  }
+
+  .artist-wrap {
+    background-color: #f2f0f0;
+    box-shadow: 1px 0 4px 0 rgba(0, 0, 0, 0.4);
+    //cursor: pointer;
+    display: flex;
+    height: 190px;
+    align-items: center;
+    padding: 14px;
+  }
+
+  .data-wrap {
+    flex: 2 2 auto;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    margin-left: 20px;
+    justify-content: space-around;
+    font-size: 14px;
+  }
+
+  .line {
+    display: flex;
+  }
+
+  .title {
+    font-weight: bold;
+    margin-right: 7px;
+  }
+
+  .comma {
+    margin-right: 5px;
+  }
+
+  .content-hits {
+    display: flex;
+    flex-flow: column;
+    width: 250px;
+    background-color: #e2e0e0;
+    margin-top: 5px;
+    transition: background-color ease 0.2s;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    z-index: 1;
+
+    &.hits-allow-hover {
+      cursor: pointer;
+      &:hover {
+        background-color: #999797;
+      }
+    }
+  }
+
+  .show-less {
+    cursor: pointer;
+    color: #716767;
+  }
+
+  .hits-line {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+
+    &.hits-line-title {
+      background-color: #c3c3c3;
+    }
+  }
+
+  .hits-line-data {
+    width: 50%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .hits-main-line {
+    position: relative;
+    height: 100px;
+  }
+}

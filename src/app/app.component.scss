@@ -1,0 +1,28 @@
+/* AppComponent's private CSS styles */
+.AppComponent {
+  //disable blue selection
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+
+  .app-container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+  }
+
+}
