@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-const BAD_REQUEST_ERROR_CODE = 400;
-
 export class DataService<T> {
 
   public actionUrl: string;

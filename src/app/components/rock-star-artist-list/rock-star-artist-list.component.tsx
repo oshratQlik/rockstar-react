@@ -2,7 +2,6 @@ import * as React from 'react';
 import './rock-star-artist-list.component.scss';
 import {Artist} from "../../models/artist.model";
 import RockStarArtistComponent from "../rock-star-artist/rock-star-artist.component";
-import {Link, NavLink} from "react-router-dom";
 import {History } from "history";
 
 export interface Props {
