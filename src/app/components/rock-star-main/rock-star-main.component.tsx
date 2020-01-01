@@ -2,9 +2,8 @@ import * as React from 'react';
 import './rock-star-main.component.scss';
 import RockStarArtistListComponent from "../rock-star-artist-list/rock-star-artist-list.component";
 import {Artist} from "../../models/artist.model";
-import axios from 'axios'
-import {NavLink} from "react-router-dom";
 import {History} from "history";
+import {RockStarApiService} from "../../services/rock-star-api.service";
 
 export interface Props {
     history: History
@@ -19,16 +18,18 @@ class RockStarMainComponent extends React.Component<Props, State> {
         this.state = {
             listArtists: []
         };
+        this.rockStarApiService = new RockStarApiService();
     }
 
+    rockStarApiService: RockStarApiService;
+
     componentDidMount(){
-        axios.get('http://localhost:4009/artists')
-            .then(res => {
-                console.log(res.data);
-                this.setState({
-                    listArtists: res.data
-                });
-            })
+        this.rockStarApiService.getListArtists(res => {
+            console.log(res.data);
+            this.setState({
+                listArtists: res.data
+            });
+        });
     }
 
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './rock-star-artist-page.component.scss';
 import {Artist} from "../../models/artist.model";
-import axios from 'axios'
+import {RockStarApiService} from "../../services/rock-star-api.service";
 
 export interface Props {
     match:any
@@ -16,17 +16,19 @@ class RockStarArtistPageComponent extends React.Component<Props, State> {
         this.state = {
             artist: null
         };
+        this.rockStarApiService = new RockStarApiService();
     }
+
+    rockStarApiService: RockStarApiService;
 
     componentDidMount(){
         let id = this.props.match.params.id;
-        axios.get('http://localhost:4009/artist/' + id)
-            .then(res => {
-                this.setState({
-                    artist: res.data
-                });
-                //console.log(res.data);
+        this.rockStarApiService.getArtist(id, res => {
+            console.log(res.data);
+            this.setState({
+                artist: res.data
             });
+        });
     }
 
     render() {
